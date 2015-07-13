@@ -6,4 +6,4 @@ A toolkit to help create DataSift branded web resources. For guidlines on usage 
 
 ## Running SaSS
 
-`sass --watch --style compressed  sass:./`
+`sass --watch sass:css --style compressed`
