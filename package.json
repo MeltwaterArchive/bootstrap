@@ -1,0 +1,25 @@
+{
+  "name": "DataSift-bootstrap",
+  "version": "0.1",
+  "description": "A toolkit to help create DataSift branded web resources. For guidlines on usage please see [DataSift Design](http://datasift.github.io/design).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/datasift/bootstrap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/datasift/bootstrap/issues"
+  },
+  "homepage": "https://github.com/datasift/bootstrap",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-csslint": "^0.4.0",
+    "grunt-contrib-cssmin": "^0.12.3"
+  }
+}
