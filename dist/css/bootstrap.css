@@ -387,14 +387,31 @@ header {
 /* --------------------------------------------------------
 	HEADINGS
 -------------------------------------------------------- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body {
+  font-size: 1em;
+  line-height: 1.5em;
   font-weight: 400;
-  margin: 1em 0; }
+  font-family: 'Open Sans', sans-serif;
+  color: #000032; }
+
+h1 {
+  font-size: 40px;
+  font-weight: 300; }
+
+h2 {
+  font-size: 32px;
+  font-weight: 300; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase; }
 
 p {
   margin: 0 0 2em 0; }
@@ -402,3 +419,9 @@ p {
 a {
   color: #FA7F36;
   text-decoration: none; }
+
+a:hover {
+  color: #50626F; }
+
+a:focus {
+  color: #42A7CA; }
