@@ -1,0 +1,21 @@
+{
+  "name": "datasift-bootstrap",
+  "version": "0.0.1",
+  "homepage": "https://github.com/datasift/bootstrap",
+  "authors": [
+    "dtsn <daniel@saxil-nielsen.com>"
+  ],
+  "description": "Bootstrap for DataSift",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "**/*.zip",
+    "Gruntfile.js",
+    "package.json",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "docs"
+  ]
+}
