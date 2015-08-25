@@ -1,0 +1,27 @@
+/* Layout ------------------------------------------------------------------- */
+
+content {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: $content-width;
+}
+
+// secondary navigation
+nav.submenu {
+    a {
+        border-bottom: 1px solid $datasift-ash;
+        display: block;
+        padding: 5px 0;
+    }
+
+    a:last-child {
+        border-bottom: 0;
+    }
+}
+
+aside {
+    nav {
+        @extend .submenu;
+    }
+}

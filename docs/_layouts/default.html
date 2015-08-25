@@ -1,0 +1,21 @@
+    {% include head.html %}
+    {% include header.html %}
+
+    <content>
+        <div class="grid-row">
+            <div class="column-3">
+                <aside>
+                    <nav>
+                    {% for heading in page.headings %}
+                        <a href="#{{heading}}">{{heading}}</a>
+                    {% endfor %}
+                    </nav>
+                </aside>
+            </div>
+            <div class="column-9">
+                {{content}}
+            </div>
+        </div>
+    </content>
+
+    {% include footer.html %}

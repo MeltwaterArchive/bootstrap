@@ -1,4 +1,9 @@
 @import 'normalize';
-@import 'colours';
-@import 'header';
+@import 'mixins';
+@import 'variables';
+@import 'extends';
 @import 'typography';
+@import 'grid';
+
+@import 'header';
+@import 'layout';

@@ -15,4 +15,19 @@ header {
 		float: left;
 		margin-right: 10px;
 	}
+
+	nav {
+		float: right;
+		text-transform: none;
+
+		a {
+			color: $datasift-white;
+			display: inline-block;
+			padding: 0px 10px;
+
+			&:hover {
+				color: $datasift-orange;
+			}
+		}
+	}
 }
