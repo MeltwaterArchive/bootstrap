@@ -17,5 +17,10 @@
     "test",
     "tests",
     "docs"
-  ]
+  ],
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "private": true
 }
