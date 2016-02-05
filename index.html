@@ -5,10 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Grid</title>
+        <title>DataSift Bootstrap</title>
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,600,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <script src="/scripts/require.js"></script>
+        <script type="text/javascript">
+            requirejs.config({
+                paths: {
+                    'bootstrap': '/scripts/bootstrap'
+                }
+            });
+        </script>
     </head>
     <body>
 
@@ -17,8 +27,13 @@
     Bootstrap
 
     <nav>
-        <a href="/grid.html">Grid</a>
-        <a href="/type.html">Type</a>
+    
+    	<a href="/resources">Resources</a>
+    
+    	<a href="/articles">Articles</a>
+    
+    	<a href="/posts">Posts</a>
+    
     </nav>
 </header>
 
@@ -32,11 +47,7 @@
                 </aside>
             </div>
             <div class="column-9">
-                <h1 id="grid">Grid</h1>
-
-<p>The DataSift grid is based off a 940px grid split into 12 columns.</p>
-
-
+                
             </div>
         </div>
     </content>
