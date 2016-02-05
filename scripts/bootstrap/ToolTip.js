@@ -29,7 +29,7 @@ define([], function() {
         if (options) {
             Object.keys(options).forEach(function (opt) {
                 this.options[opt] = options[opt];
-            });
+            }.bind(this));
         }
 
         // check to make sure the position is valid
@@ -65,6 +65,10 @@ define([], function() {
 
         // need to append the item to calculate the height
         document.body.appendChild(this.tooltip);
+
+        setTimeout(function () {
+            this.tooltip.classList.add('active');
+        }.bind(this), 100);
 
         return this;
     };
@@ -144,7 +148,11 @@ define([], function() {
      */
     Tooltip.prototype.remove = function () {
         if (this.tooltip && this.tooltip.parentNode) {
+
+            this.tooltip.classList.remove('active');
+            setTimeout(function () {
             this.tooltip.parentNode.removeChild(this.tooltip);
+        }.bind(this), 500);
         }
         return null;
     };

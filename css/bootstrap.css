@@ -407,11 +407,17 @@ th {
     Triangle
     ---
 --------------------------------------------------------- */
+/* --------------------------------------------------------
+    Transition
+    ---
+--------------------------------------------------------- */
 /* Measurements ------------------------------------------------------------- */
 /* Colours ------------------------------------------------------------------ */
 /* primary colours */
 /* secondary colours */
 /* interface colours */
+/* control colours */
+/* custom easings */
 /* --------------------------------------------------------
 	CONTENTS - EXTENDS
 	---
@@ -519,28 +525,6 @@ a:hover {
 a:focus {
   color: #42A7CA; }
 
-/* Other -------------------------------------------------------------------- */
-span.code {
-  font-family: Menlo, Monaco, Courier;
-  background-color: #EEE;
-  font-size: 14px; }
-
-pre {
-  font-family: Menlo, Monaco, Courier;
-  white-space: pre-wrap;
-  /*border: 1px solid #ddd;*/
-  padding: 20px;
-  background-color: #fdfdfd;
-  /*font-size:14px;*/
-  overflow: auto;
-  border-radius: 3px;
-  background: #272b2d;
-  font-family: 'Source Code Pro',Menlo,monospace;
-  font-size: 13px;
-  line-height: 1.5em;
-  font-weight: 500;
-  color: #d0d4d7; }
-
 /* --------------------------------------------------------
 	CONTENTS - GRID
 	---
@@ -646,13 +630,39 @@ pre {
     padding: 1em; }
 
 .dsb-tooltip {
+  display: block;
   background: #50626F;
-  color: #000032;
-  padding: 10px;
+  color: white;
+  padding: 12px 14px;
   position: absolute;
-  width: 200px;
+  max-width: 200px;
   z-index: 99;
-  font-size: 0.8125rem; }
+  font-size: 0.8125rem;
+  word-break: break-word;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(0, 5px) scale(0.9);
+  -moz-transform: translate(0, 5px) scale(0.9);
+  -ms-transform: translate(0, 5px) scale(0.9);
+  -o-transform: translate(0, 5px) scale(0.9);
+  transform: translate(0, 5px) scale(0.9);
+  -webkit-transition: 0.2s opacity cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s, 0.2s visibility cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s, 0.2s transform cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s;
+  -moz-transition: 0.2s opacity cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s, 0.2s visibility cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s, 0.2s transform cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s;
+  transition: 0.2s opacity cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s, 0.2s visibility cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s, 0.2s transform cubic-bezier(0.52, 0.3, 0.12, 1) 0.05s; }
+  .dsb-tooltip a {
+    color: white;
+    text-decoration: underline; }
+  .dsb-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(0, 0) scale(1);
+    -moz-transform: translate(0, 0) scale(1);
+    -ms-transform: translate(0, 0) scale(1);
+    -o-transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    transition-delay: 0s; }
   .dsb-tooltip::before {
     position: absolute;
     content: ""; }
@@ -667,9 +677,9 @@ pre {
     height: 0;
     width: 0;
     border-bottom: 6px solid transparent;
-    border-left: 6px solid #50626F;
+    border-right: 6px solid #50626F;
     border-top: 6px solid transparent;
-    right: -6px; }
+    left: -6px; }
   .dsb-tooltip.bottom::before {
     height: 0;
     width: 0;
@@ -681,9 +691,9 @@ pre {
     height: 0;
     width: 0;
     border-bottom: 6px solid transparent;
-    border-right: 6px solid #50626F;
+    border-left: 6px solid #50626F;
     border-top: 6px solid transparent;
-    left: -6px; }
+    right: -6px; }
 
 /* --------------------------------------------------------
     HEADER
