@@ -4,6 +4,8 @@ description:
 
 # Build settings
 markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
 highlighter: pygments
 
 # post settings
@@ -11,9 +13,24 @@ permalink: /:year/:month/:day/:title/
 
 collections:
   resources:
-    output: true
+    output: false
   articles:
     output: true
+
+
+defaults:
+  -
+    scope:
+      path: "_resources/controls"
+    values:
+      layout: resource
+      category: controls
+  -
+    scope:
+      path: "_resources/design"
+    values:
+      layout: resource
+      category: design
 
 prose:
   rooturl: '_posts'

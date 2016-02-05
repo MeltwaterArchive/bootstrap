@@ -24,3 +24,10 @@ $datasift-white: #fff;
 $datasift-success: #52cb60;
 $datasift-warning: #ff9e2b;
 $datasift-error: #e74c3c;
+
+/* control colours */
+$tooltip-background-color: $datasift-slate;
+$tooltip-text-color: white;
+
+/* custom easings */
+$slick-ease: cubic-bezier(0.52, 0.3, 0.12, 1);
