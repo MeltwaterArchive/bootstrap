@@ -3,7 +3,8 @@
     Bootstrap
 
     <nav>
-        <a href="/grid.html">Grid</a>
-        <a href="/type.html">Type</a>
+    {% for collection in site.collections %}
+    	<a href="/{{ collection.label }}">{{ collection.label | capitalize }}</a>
+    {% endfor %}
     </nav>
 </header>
