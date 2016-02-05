@@ -36,22 +36,22 @@
 	}
 
 	&.top::before {
-		@include triangle(12px, $datasift-slate, down);
+		@include triangle(12px, $tooltip-background-color, down);
 		bottom: -6px;
 	}
 
 	&.right::before {
-		@include triangle(12px, $datasift-slate, left);
+		@include triangle(12px, $tooltip-background-color, left);
 		left: -6px;
 	}
 
 	&.bottom::before {
-		@include triangle(12px, $datasift-slate, up);
+		@include triangle(12px, $tooltip-background-color, up);
 		top: -6px;
 	}
 
 	&.left::before {
-		@include triangle(12px, $datasift-slate, right);
+		@include triangle(12px, $tooltip-background-color, right);
 		right: -6px;
 	}
 }
