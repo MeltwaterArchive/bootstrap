@@ -8,15 +8,15 @@
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,600,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/css/bootstrap.css">
-        <link rel="stylesheet" href="/css/documentation.css">
-        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/bootstrap/css/documentation.css">
+        <link rel="stylesheet" href="/bootstrap/css/syntax.css">
 
         <script src="/scripts/require.js"></script>
         <script type="text/javascript">
             requirejs.config({
                 paths: {
-                    'bootstrap': '/scripts/bootstrap'
+                    'bootstrap': 'bootstrap/scripts/bootstrap'
                 }
             });
         </script>
