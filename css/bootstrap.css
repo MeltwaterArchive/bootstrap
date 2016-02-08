@@ -694,6 +694,36 @@ a:focus {
     border-left: 6px solid #50626F;
     border-top: 6px solid transparent;
     right: -6px; }
+  .dsb-tooltip.error {
+    background: #e74c3c; }
+    .dsb-tooltip.error.top::before {
+      height: 0;
+      width: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #e74c3c;
+      bottom: -6px; }
+    .dsb-tooltip.error.right::before {
+      height: 0;
+      width: 0;
+      border-bottom: 6px solid transparent;
+      border-right: 6px solid #e74c3c;
+      border-top: 6px solid transparent;
+      left: -6px; }
+    .dsb-tooltip.error.bottom::before {
+      height: 0;
+      width: 0;
+      border-bottom: 6px solid #e74c3c;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      top: -6px; }
+    .dsb-tooltip.error.left::before {
+      height: 0;
+      width: 0;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid #e74c3c;
+      border-top: 6px solid transparent;
+      right: -6px; }
 
 /* --------------------------------------------------------
     HEADER
