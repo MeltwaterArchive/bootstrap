@@ -1,20 +1,17 @@
 ---
 title: Typography
-headings:
-    - Fonts
-    - Headings
 ---
 
-#Typography
 
-## Font
+### Font
+
 We use [Google's Open Sans](https://www.google.com/fonts/specimen/Open+Sans) as our default font. You can run this on your site using Google Fonts. We recommend the `link` script below to add Open Sans to your project.
 
 {% highlight html %}
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
 {% endhighlight %}
 
-## Headings
+### Headings
 DataSift Bootstrap supports the headings h1 through to h6 as both tags and classes.
 
 {% capture code %}
@@ -29,5 +26,3 @@ DataSift Bootstrap supports the headings h1 through to h6 as both tags and class
 {% endcapture %}
 
 {% include examples/html.html code=code %}
-
-## something else

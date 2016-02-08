@@ -31,17 +31,21 @@
 	<aside>
 		<nav class="menu">
 			
-			Controls
+			<h3>Controls</h3>
 			<ul>
 			
-				<li><a href="#/resources/controls/tooltip">Tooltip</a></li>
+				<li><a href="#error">Error Handler</a></li>
+			
+				<li><a href="#tooltip">Tooltip</a></li>
 			
 			</ul>
 			
-			Design
+			<h3>Design</h3>
 			<ul>
 			
-				<li><a href="#/resources/design/type">Typography</a></li>
+				<li><a href="#colors">Colors</a></li>
+			
+				<li><a href="#type">Typography</a></li>
 			
 			</ul>
 		
@@ -52,10 +56,83 @@
 	
 	<section id="controls">
 		<h1>
-			<span>1</span><br/>
+			<span>
+			
+			  	01
+			
+			</span>
 			Controls
 		</h1>
 		<div class="line"></div>
+		
+			<article id="error">
+				<header>
+					<h3>Error Handler</h3>
+				</header>
+				<div class="content">
+				<p>The Error Handler control will handle a variety of different errors. It will support form and generic errors.
+It does this via extending the other elements in DataSift Bootstrap with their correct error stylings.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Message</td>
+<td><code>string</code></td>
+<td>The message to display in the tooltip</td>
+</tr>
+<tr>
+<td>Position</td>
+<td><code>string</code></td>
+<td>See <a href="#tooltip">tooltip</a></td>
+</tr>
+</tbody></table>
+
+<h3 id="form-errors">Form Errors</h3>
+
+<p>When the validation fails on an input the following error message should
+be shown.</p>
+
+<p><input type="text" id="error-example" /></p>
+
+<div class="example">
+    <script type="text/javascript">
+    
+    require([
+        'bootstrap/ToolTip'
+    ], function (ToolTip) {
+        // pointer to the element
+        var example = document.getElementById('error-example');
+        // load up the tooltip
+        new ToolTip('An Error', example, {
+            'position':'right',
+            'classNames': ['error']
+        });
+    });
+
+    </script>
+    
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">require</span><span class="p">([</span>
+        <span class="s1">&#39;bootstrap/ToolTip&#39;</span>
+    <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ToolTip</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// pointer to the element</span>
+        <span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;error-example&#39;</span><span class="p">);</span>
+        <span class="c1">// load up the tooltip</span>
+        <span class="k">new</span> <span class="nx">ToolTip</span><span class="p">(</span><span class="s1">&#39;An Error&#39;</span><span class="p">,</span> <span class="nx">example</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;position&#39;</span><span class="o">:</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;classNames&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span>
+        <span class="p">});</span>
+    <span class="p">});</span></code></pre></figure>
+
+</div>
+
+				</div>
+			</article>
+			<div class="line"></div>
 		
 			<article id="tooltip">
 				<header>
@@ -77,6 +154,37 @@ will be positioned relative to the element and can accept any HTML based string.
 <td><code>string</code></td>
 <td>The message to display in the tooltip</td>
 </tr>
+<tr>
+<td>Element</td>
+<td><code>DOMElement</code></td>
+<td>Element to attach the tooltip to</td>
+</tr>
+<tr>
+<td>Options</td>
+<td><code>object</code></td>
+<td>See options</td>
+</tr>
+</tbody></table>
+
+<h3 id="options">Options</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>position</td>
+<td><code>string</code></td>
+<td>One of the following; top, bottom, left and right</td>
+</tr>
+<tr>
+<td>className</td>
+<td><code>array</code></td>
+<td>Additional css class names for the tooltip</td>
+</tr>
 </tbody></table>
 
 <h3 id="basic-example">Basic Example</h3>
@@ -94,6 +202,7 @@ be rendered below the element.</p>
     ], function (ToolTip) {
         // pointer to the element
         var example = document.getElementById('tooltip-example');
+        
         // load up the tooltip
         new ToolTip('Hello World', example, {
             'position':'bottom'
@@ -107,6 +216,7 @@ be rendered below the element.</p>
     <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ToolTip</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// pointer to the element</span>
         <span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;tooltip-example&#39;</span><span class="p">);</span>
+        
         <span class="c1">// load up the tooltip</span>
         <span class="k">new</span> <span class="nx">ToolTip</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">,</span> <span class="nx">example</span><span class="p">,</span> <span class="p">{</span>
             <span class="s1">&#39;position&#39;</span><span class="o">:</span><span class="s1">&#39;bottom&#39;</span>
@@ -131,6 +241,7 @@ how we are assigning the tooltip to <code>this</code> so we can remove it at a l
     ], function (ToolTip) {
         // pointer to the element
         var example = document.getElementById('hover-tooltip-example');
+        
         // add the mouseover event
         example.addEventListener('mouseover', function () {
             // create the tooltip
@@ -138,6 +249,7 @@ how we are assigning the tooltip to <code>this</code> so we can remove it at a l
                 'position': 'left'
             });
         }.bind(this));
+        
         // when we leave the element remove the tooltip
         example.addEventListener('mouseout', function () {
             this.tooltip.remove();
@@ -151,6 +263,7 @@ how we are assigning the tooltip to <code>this</code> so we can remove it at a l
     <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ToolTip</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// pointer to the element</span>
         <span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;hover-tooltip-example&#39;</span><span class="p">);</span>
+        
         <span class="c1">// add the mouseover event</span>
         <span class="nx">example</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseover&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="c1">// create the tooltip</span>
@@ -158,6 +271,7 @@ how we are assigning the tooltip to <code>this</code> so we can remove it at a l
                 <span class="s1">&#39;position&#39;</span><span class="o">:</span> <span class="s1">&#39;left&#39;</span>
             <span class="p">});</span>
         <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+        
         <span class="c1">// when we leave the element remove the tooltip</span>
         <span class="nx">example</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseout&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">tooltip</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
@@ -166,11 +280,11 @@ how we are assigning the tooltip to <code>this</code> so we can remove it at a l
 
 </div>
 
-<h3 id="clickable-link">Clickable Link</h3>
+<h3 id="actionable-content">Actionable Content</h3>
 
 <p>A slightly more indepth example involves using the tooltip with a content block
 which contains a link. This requires the tooltip to be able to stay when we 
-mouse out of the element.</p>
+mouse out of the element and into the tooltip.</p>
 
 <p><input type="text" id="clickable-tooltip-example" /></p>
 
@@ -182,6 +296,7 @@ mouse out of the element.</p>
     ], function (ToolTip) {
         // pointer to the element
         var example = document.getElementById('clickable-tooltip-example');
+        
         // add the mouseover event
         example.addEventListener('mouseover', function () {
             if (!this.tooltip) {
@@ -189,14 +304,17 @@ mouse out of the element.</p>
                 this.tooltip = new ToolTip('Hello <a href="http://google.com">Google</a>', example);
             }
         }.bind(this));
+        
         // when we leave the element remove the tooltip
         example.addEventListener('mouseout', function (e) {
             if (e.toElement !== this.tooltip.getToolTip()) {
                 this.tooltip = this.tooltip.remove();
             } else {
+                
                 // add a special case for when we leave the element but move into
                 // the tooltip
                 this.tooltip.getToolTip().addEventListener('mouseout', function (e) {
+                    
                     // using the isDescendant function to determine whether the element 
                     // is a child of the tooltip
                     if (e.toElement !== example && !this.tooltip.isDescendant(e.toElement)) {
@@ -214,6 +332,7 @@ mouse out of the element.</p>
     <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ToolTip</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// pointer to the element</span>
         <span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;clickable-tooltip-example&#39;</span><span class="p">);</span>
+        
         <span class="c1">// add the mouseover event</span>
         <span class="nx">example</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseover&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">tooltip</span><span class="p">)</span> <span class="p">{</span>
@@ -221,14 +340,17 @@ mouse out of the element.</p>
                 <span class="k">this</span><span class="p">.</span><span class="nx">tooltip</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ToolTip</span><span class="p">(</span><span class="s1">&#39;Hello &lt;a href=&quot;http://google.com&quot;&gt;Google&lt;/a&gt;&#39;</span><span class="p">,</span> <span class="nx">example</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+        
         <span class="c1">// when we leave the element remove the tooltip</span>
         <span class="nx">example</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseout&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">toElement</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">tooltip</span><span class="p">.</span><span class="nx">getToolTip</span><span class="p">())</span> <span class="p">{</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">tooltip</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tooltip</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                
                 <span class="c1">// add a special case for when we leave the element but move into</span>
                 <span class="c1">// the tooltip</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">tooltip</span><span class="p">.</span><span class="nx">getToolTip</span><span class="p">().</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseout&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    
                     <span class="c1">// using the isDescendant function to determine whether the element </span>
                     <span class="c1">// is a child of the tooltip</span>
                     <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">toElement</span> <span class="o">!==</span> <span class="nx">example</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">tooltip</span><span class="p">.</span><span class="nx">isDescendant</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">toElement</span><span class="p">))</span> <span class="p">{</span>
@@ -241,32 +363,146 @@ mouse out of the element.</p>
 
 </div>
 
+<h3 id="tooltips-as-errors">Tooltips as Errors</h3>
+
+<p>Please see the error documentation for more information in using tooltips as 
+error messages. Typically this can be achieved by adding the css class <code>error</code>
+to the tooltip class list.</p>
+
+<p><input type="text" id="tooltip-example-error" /></p>
+
+<div class="example">
+    <script type="text/javascript">
+    
+    require([
+        'bootstrap/ToolTip'
+    ], function (ToolTip) {
+        // pointer to the element
+        var example = document.getElementById('tooltip-example-error');
+        // load up the tooltip
+        new ToolTip('An Error', example, {
+            'position':'right',
+            'classNames': ['error']
+        });
+    });
+
+    </script>
+    
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">require</span><span class="p">([</span>
+        <span class="s1">&#39;bootstrap/ToolTip&#39;</span>
+    <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ToolTip</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// pointer to the element</span>
+        <span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;tooltip-example-error&#39;</span><span class="p">);</span>
+        <span class="c1">// load up the tooltip</span>
+        <span class="k">new</span> <span class="nx">ToolTip</span><span class="p">(</span><span class="s1">&#39;An Error&#39;</span><span class="p">,</span> <span class="nx">example</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;position&#39;</span><span class="o">:</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;classNames&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span>
+        <span class="p">});</span>
+    <span class="p">});</span></code></pre></figure>
+
+</div>
+
 				</div>
 			</article>
+			<div class="line"></div>
 		
 	</section>
 	
 	<section id="design">
 		<h1>
-			<span>2</span><br/>
+			<span>
+			
+			  	02
+			
+			</span>
 			Design
 		</h1>
 		<div class="line"></div>
+		
+			<article id="colors">
+				<header>
+					<h3>Colors</h3>
+				</header>
+				<div class="content">
+				<p>An introduction to our colour philosophy.</p>
+
+<h3 id="primary-palette">Primary palette</h3>
+
+<p>The primary colors are mainly used on the logo.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Hex</th>
+<th>RGB</th>
+<th>CMYK</th>
+<th>Pantone</th>
+<th>SaSS Variable</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DataSift Orange</td>
+<td>#FA7F36</td>
+<td>250,127,54</td>
+<td>0,62,88,0</td>
+<td>158C</td>
+<td><code>$datasift-orange</code></td>
+</tr>
+<tr>
+<td>Night Sky</td>
+<td>#393943</td>
+<td>57,57,67</td>
+<td>73,67,53,47</td>
+<td>532C</td>
+<td><code>$night-sky</code></td>
+</tr>
+</tbody></table>
+
+<h3 id="secondary-palette">Secondary palette</h3>
+
+<p>We use the secondary palette to compliment the primary palette.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Hex</th>
+<th>RGB</th>
+<th>CMYK</th>
+<th>SaSS Variable</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Slate</td>
+<td>#50626F</td>
+<td>80,98,111</td>
+<td>0,62,88,0</td>
+<td><code>$datasift-slate</code></td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>#42A7CA</td>
+<td>66,167,202</td>
+<td>69,17,12,0</td>
+<td><code>$datasift-blue</code></td>
+</tr>
+</tbody></table>
+
+				</div>
+			</article>
+			<div class="line"></div>
 		
 			<article id="type">
 				<header>
 					<h3>Typography</h3>
 				</header>
 				<div class="content">
-				<h1 id="typography">Typography</h1>
-
-<h2 id="font">Font</h2>
+				<h3 id="font">Font</h3>
 
 <p>We use <a href="https://www.google.com/fonts/specimen/Open+Sans">Google&#39;s Open Sans</a> as our default font. You can run this on your site using Google Fonts. We recommend the <code>link</code> script below to add Open Sans to your project.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&#39;http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700&#39;</span> <span class="na">rel=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">type=</span><span class="s">&#39;text/css&#39;</span><span class="nt">&gt;</span></code></pre></figure>
 
-<h2 id="headings">Headings</h2>
+<h3 id="headings">Headings</h3>
 
 <p>DataSift Bootstrap supports the headings h1 through to h6 as both tags and classes.</p>
 
@@ -300,10 +536,9 @@ mouse out of the element.</p>
     </div>
 </div>
 
-<h2 id="something-else">something else</h2>
-
 				</div>
 			</article>
+			<div class="line"></div>
 		
 	</section>
 	

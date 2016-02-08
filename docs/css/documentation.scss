@@ -10,39 +10,63 @@
 
 .documentation {
 
+	border-top: 60px solid $datasift-night-sky;
+
+
 	nav {
 		position: fixed;
-	    top: 0px;
+	    top: 60px;
 	    left: 0px;
 	    background: #fff;
 	    border-right: 1px solid $datasift-ash;
 	    height: 100%;
 	    overflow: auto;
 	    width: 280px;
+	    box-shadow: 0px 3px 0.5em 1px $datasift-ash;
+	    padding: 20px;
+	    box-sizing: border-box;
+
+	    h3 {
+	    	font-size: 14px;
+	    	text-transform: uppercase;
+	    }
 	}
 
 	.main {
 		width: calc(100% - 280px);
 	    height: 100%;
 	    margin-left: 280px;
-	    padding: 4em 15%;
+	    padding: 4em;
 	    box-sizing: border-box;
 
-	    h1 {
+	    section {
 
-	    	border-left: 5px solid $datasift-orange;
-	    	font-weight: 500;
-	    	font-size: 24px;
-	    	padding-left: 20px;
-	    	text-transform: uppercase;
-	    	line-height: 24px;
+	    	h1 {
+		    	border-left: 5px solid $datasift-orange;
+		    	font-weight: 500;
+		    	font-size: 24px;
+		    	padding-left: 20px;
+		    	text-transform: uppercase;
+		    	line-height: 24px;
+		    	margin-top: 80px;
 
-	    	span {
-	    		color: #DCDCDC;
+		    	span {
+		    		color: #DCDCDC;
+		    		margin-bottom: 5px;
+		    		display: block;
+		    	}
+		    }
+
+		    &:first-child h1:first-child {
+	    		margin-top: 0;
 	    	}
 	    }
 
+	
+
 	    article {
+
+	    	max-width: 900px;
 
 	    	header {
 	    		background: inherit;
@@ -50,8 +74,22 @@
 	    		padding: 0;
 
 	    		h3 {
-	    			font-weight: 300;
+	    			font-weight: 500;
 	    			text-transform: none;
+	    		}
+	    	}
+
+	    	.content {
+	    		h3 {
+	    			font-weight: 300;
+	    			font-size: 24px;
+	    		}
+
+	    		p code {
+	    			background: #eaeaea;
+	    			border-radius: 3px;
+	    			display: inline-block;
+	    			padding: 0px 5px;
 	    		}
 	    	}
 	    }
@@ -68,17 +106,15 @@
 		margin: 0;
 
 		pre {
-		    font-family: Menlo, Monaco, Courier;
-		    border: 1px solid #ddd;
+		    border: 1px solid #eaeaea;
 		    padding: 20px;
-		    background: $datasift-ash;
+		    background: #fcfcfc;
 		    font-size: 14px;
 		    overflow: auto;
-		    border-radius: 3px;
-		    font-size: 13px;
-		    line-height: 1.5em;
-		    font-weight: 500;
 		    overflow: auto;
+		    font-family: 'Source Code Pro', Menlo, monospace;
+			line-height: 1.5em;
+			font-weight: 500;
 		}
 	}
 }
@@ -87,8 +123,8 @@ table {
 	width: 100%;
 	margin: 40px 0;
 	border-collapse: collapse;
-	font-size: 13px;
 	line-height: 1.5em;
+	border: 1px solid #eaeaea;
 }
 
 th,td {
@@ -116,7 +152,6 @@ thead th,th {
 	text-align: left;
 	padding: 10px 15px;
 	height: 20px;
-	font-size: 13px;
 	font-weight: bold;
 	color: #444;
 	border-bottom: 1px solid #dadadc;
