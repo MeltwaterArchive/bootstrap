@@ -59,9 +59,17 @@ define([], function() {
             this.tooltip.classList.add(c);
         }.bind(this));
         // populate the content
-        this.tooltip.innerHTML = 
-            '<div class="close"></div><div class="message">' + 
-            this.content + '</div>';
+        this.tooltip.innerHTML = '<div class="close"></div>';
+
+        if (typeof this.content === 'string') {
+            this.tooltip.innerHTML = 
+                '<div class="message">' + this.content + '</div>';
+        } else {
+            var message = document.createElement('div');
+            message.className = 'message';
+            message.appendChild(this.content);
+            this.tooltip.appendChild(message);
+        }
 
         // need to append the item to calculate the height
         document.body.appendChild(this.tooltip);
