@@ -91,32 +91,32 @@ define([], function() {
 
         var bodyRect = document.body.getBoundingClientRect(),
             elementRect = this.element.getBoundingClientRect(),
+            tooltipRect = this.tooltip.getBoundingClientRect(),
             offsetTop = elementRect.top - bodyRect.top,
             offsetLeft = elementRect.left - bodyRect.left;
 
         // adjust the position depending on where we want it
         switch(this.options.position) {
             case 'top':
-                offsetTop -= this.tooltip.offsetHeight ;
+                offsetTop -= tooltipRect.height;
                 break;
             case 'left':
-                offsetLeft -= this.tooltip.offsetWidth ;
+                offsetLeft -= tooltipRect.width;
                 break;
             case 'right':
-                offsetLeft += this.element.offsetWidth ;
+                offsetLeft += elementRect.width;
                 break;
             case 'bottom':
-                offsetTop += this.element.offsetHeight;
+                offsetTop += elementRect.height;
                 break;
 
         }
         // apply to the tooltip
         this.tooltip.style.left = offsetLeft + 'px';
         this.tooltip.style.top = offsetTop + 'px';
-
         return this;
     };
-
+    
     /**
      * Get ToolTip
      *
